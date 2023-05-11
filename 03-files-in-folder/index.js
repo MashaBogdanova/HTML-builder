@@ -9,7 +9,7 @@ async function readFiles() {
         for (const file of files) {
             if (file.isFile()) {
                 fs.stat(`${filePath}/${file.name}`, (err, stats) => {
-                    const size = stats.size / 1000;
+                    const size = stats.size / 1024;
                     stdout.write(`${file.name.split(".").join("-")}-${size}kb\n`);
                 });
             }
